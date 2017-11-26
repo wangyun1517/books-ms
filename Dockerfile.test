@@ -23,9 +23,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Scala
-RUN curl -O -q http://downloads.typesafe.com/scala/2.12.4/scala-2.12.4.deb && \
-    dpkg -i scala-2.12.4.deb && \
-    rm scala-2.12.4.deb
+RUN curl -O -q http://downloads.typesafe.com/scala/2.11.5/scala-2.11.5.deb && \
+    dpkg -i scala-2.11.5.deb && \
+    rm scala-2.11.5.deb
 
 # Gulp, bower
 RUN npm install -g gulp bower
