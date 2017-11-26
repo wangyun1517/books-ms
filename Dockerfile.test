@@ -18,14 +18,14 @@ RUN echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.l
 # Mongo, NodeJS, Git, SBT, xvfb, FireFox, Chrome
 RUN apt-get update && \
     apt-get -y --fix-missing install wget bzip2 make g++ && \
-    apt-get -y --force-yes --fix-missing install --no-install-recommends mongodb nodejs git sbt xvfb firefox google-chrome-stable && \
+    apt-get -y --force-yes --fix-missing install --no-install-recommends scala mongodb nodejs git sbt xvfb firefox google-chrome-stable && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Scala
-RUN curl -O -q http://downloads.typesafe.com/scala/2.11.5/scala-2.11.5.deb && \
-    dpkg -i scala-2.11.5.deb && \
-    rm scala-2.11.5.deb
+# RUN curl -O -q http://downloads.typesafe.com/scala/2.11.5/scala-2.11.5.deb && \
+#    dpkg -i scala-2.11.5.deb && \
+#    rm scala-2.11.5.deb
 
 # Gulp, bower
 RUN npm install -g gulp bower
